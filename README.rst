@@ -69,6 +69,7 @@ Running the app
 Point your web browser to http://localhost:5000/
 
 You can make use of the following users:
+
 - email `admin@example.com` with password `Password1`.
 - email `editor@example.com` with password `Password1`.
 

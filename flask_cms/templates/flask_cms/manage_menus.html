@@ -1,0 +1,34 @@
+{% extends "flask_cms/cms_base.html" %}
+
+{% block content %}
+
+<h1>Manage Menus</h1>
+
+{% for menu in menus %}
+<h2>{{ menu.name }}</h2>
+<table class="table table-striped auto-width" style="width: auto;">
+    <thead>
+    <tr>
+        <th class="text-right">Index</th>
+        <th>Name</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for menu_item in menu.menu_items %}
+    <tr>
+        <td class="text-right">
+            {{ menu_item.order }}
+        </td>
+        <td>
+            <a href="{{ url_for('cms.edit_menu_item', menu_item_id=menu_item.encode_id()) }}">
+                {{ menu_item.name }}</a>
+        </td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endfor %}
+
+{# <a href="{{ url_for('cms.edit_page', id='0') }}" class="btn btn-primary">Add page</a> #}
+
+{% endblock %}

@@ -1,0 +1,10 @@
+{% extends "flask_cms/cms_base.html" %}
+
+{% block content %}
+<h1>Edit Menu item</h1>
+
+{% from "flask_cms/bootstrap_form_macros.html" import quick_form %}
+{{ quick_form(form) }}
+
+{% endblock %}
+

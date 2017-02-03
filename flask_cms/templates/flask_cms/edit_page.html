@@ -1,0 +1,36 @@
+{% extends "flask_cms/cms_base.html" %}
+
+{% block extra_css %}
+    <!-- Froala CSS -->
+    <link href="{{ url_for('static', filename='font-awesome/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ url_for('static', filename='froala_editor/css/froala_editor.pkgd.min.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ url_for('static', filename='froala_editor/css/froala_style.min.css') }}" rel="stylesheet" type="text/css" />
+{% endblock %}
+
+{% block content %}
+<h1>Edit page</h1>
+
+{% from "flask_cms/bootstrap_form_macros.html" import form_field %}
+<form action="" method="POST" class="form" role="form">
+            {{ form.hidden_tag() }}
+
+            {{ form_field(form.name) }}
+            {{ form_field(form.content) }}
+
+            {{ form_field(form.slug, placeholder="Leave empty to generate one based on the title") }}
+
+            {{ form_field(form.submit) }}
+</form>
+
+{% endblock %}
+
+{% block extra_js %}
+    <script type="text/javascript" src="{{ url_for('static', filename='froala_editor/js/froala_editor.pkgd.min.js') }}"></script>
+    <script>
+        $(function() {
+            $('#content').froalaEditor({
+                height: 250
+            })
+        });
+    </script>
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends "flask_cms/cms_base.html" %}
+
+{% block content %}
+<h1>{{ page.name }}
+    {% if page.can_edit() %}
+        <a href="{{ page.get_edit_url() }}" class="btn btn-sm btn-danger">
+            Edit</a>
+    {% endif %}
+</h1>
+
+{{ page.content|safe }}
+{% endblock %}

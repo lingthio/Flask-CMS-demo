@@ -1,0 +1,27 @@
+{% extends "flask_cms/cms_base.html" %}
+
+{% block content %}
+
+<h1>Manage Pages</h1>
+
+<table class="table table-striped auto-width" style="width: auto;">
+    <thead>
+    <tr>
+        <th>Name</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for page in pages %}
+    <tr>
+        <td>
+            <a href="{{ page.get_edit_url() }}">
+                {{ page.name }}</a>
+        </td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+{# <a href="{{ url_for('cms.edit_page', id='0') }}" class="btn btn-primary">Add page</a> #}
+
+{% endblock %}

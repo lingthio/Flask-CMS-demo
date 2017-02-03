@@ -1,8 +1,10 @@
-# Flask-CMS
+Flask-CMS
+=========
 
 A minimalist Content Management System (CMS) using the Flask application framework.
 
-## Requirements
+Requirements
+------------
 
 The Role model must have a `name` field, and a `Admin` role and a `Editor` role must exist.
 
@@ -12,13 +14,15 @@ A User must have an `Admin` role to manage CMS Menu Items.
 
 A User must have an `Editor` role to manage and edit CMS Pages.
 
-## Install
+Install
+-------
 
 For now, retrieve from: https://github.com/lingthio/Flask-CMS-demo
 
-## Setup
-
+Setup
+-----
 ::
+
     from flask import Flask
     from flask_cms import CMS
 
@@ -38,7 +42,8 @@ Add an `admin@example.com` user that has an `Admin` Role.
 
 Add an `editor@example.com` user that has an `Editor` Role.
 
-## Manage Pages
+Manage Pages
+------------
 
 Login as `admin@example.com`
 
